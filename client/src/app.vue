@@ -5,9 +5,9 @@
     </template>
     <template v-else>
       <main class="neko-main">
-        <div v-if="!videoOnly" class="header-container">
-          <neko-header />
-        </div>
+        <!-- <div v-if="!videoOnly" class="header-container"> -->
+          <!-- <neko-header /> -->
+        <!-- </div> -->
         <div class="video-container">
           <neko-video
             ref="video"
@@ -17,7 +17,7 @@
           />
         </div>
         <div v-if="!videoOnly" class="room-container">
-          <neko-members />
+          <!-- <neko-members /> -->
           <div class="room-menu">
             <div class="settings">
               <neko-menu />

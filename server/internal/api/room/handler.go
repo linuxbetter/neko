@@ -94,6 +94,9 @@ func (h *RoomHandler) Route(r types.Router) {
 		r.Post("/request", h.controlRequest)
 		r.Post("/release", h.controlRelease)
 
+	 	// allow host or admins to inject key sequences
+	 	r.With(auth.HostsOrAdminsOnly).Post("/keys", h.controlKeys)
+
 		r.With(auth.AdminsOnly).Post("/take", h.controlTake)
 		r.With(auth.HostsOrAdminsOnly).Post("/give/{sessionId}", h.controlGive)
 		r.With(auth.AdminsOnly).Post("/reset", h.controlReset)
